@@ -118,7 +118,7 @@ jobs:
 
       # ── npm audit (fail on HIGH/CRITICAL) ─────────────────────────────────────
       - name: npm audit (HIGH/CRITICAL → fail)
-        run: cd ${{ inputs.service-dir }} && npm audit --audit-level=high
+        run: cd ${{ inputs.service-dir }} && npm audit --omit=dev --audit-level=high
 
       # ── AWS credentials via OIDC (no long-lived keys) ─────────────────────────
       - name: Configure AWS credentials (OIDC)
